@@ -26,16 +26,16 @@ class Rover:
             self.move_y(1)
 
     def move_x(self, distance):
-        if self.x + distance > 5:
-            self.x = 5
+        if self.x + distance > self.x_edge:
+            self.x = self.x_edge
         elif self.x + distance < 0:
             self.x = 0
         else:
             self.x += distance
 
     def move_y(self, distance):
-        if self.y + distance > 5:
-            self.y = 5
+        if self.y + distance > self.y_edge:
+            self.y = self.y_edge
         elif self.y + distance < 0:
             self.y = 0
         else:
@@ -70,9 +70,12 @@ class Rover:
 
 
 if __name__ == "__main__":
+    plateau_set = input("Plateau: ")
+    plateau_attr = plateau_set.split()
     rover1_set = input("Rover1 Landing: ")
     rover1_attr = rover1_set.split()
     rover1 = Rover(int(rover1_attr[0]), int(rover1_attr[1]), rover1_attr[2])
+    rover1.set_edge(plateau_attr[0], plateau_attr[1])
     rover1_action = input("Rover1 Instructions: ")
     rover1.action(rover1_action)
 
