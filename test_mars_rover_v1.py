@@ -54,7 +54,7 @@ def test_rotate_funtion():
 def test_action_funtion():
     rover = Rover(1, 2, "S")
     rover.set_edge(3, 3)
-    rover.action("LMLMLM")
+    rover.take_action("LMLMLM")
     assert rover.x == 1
     assert rover.y == 3
     assert rover.direction == "W"
@@ -63,7 +63,7 @@ def test_action_funtion():
 def test_action_funtion_two():
     rover = Rover(1, 2, "N")
     rover.set_edge(5, 5)
-    rover.action("LMLMLMLMM")
+    rover.take_action("LMLMLMLMM")
     assert rover.x == 1
     assert rover.y == 3
     assert rover.direction == "N"
@@ -72,7 +72,7 @@ def test_action_funtion_two():
 def test_action_funtion_three():
     rover = Rover(3, 3, "E")
     rover.set_edge(5, 5)
-    rover.action("MMRMMRMRRM")
+    rover.take_action("MMRMMRMRRM")
     assert rover.x == 5
     assert rover.y == 1
     assert rover.direction == "E"
