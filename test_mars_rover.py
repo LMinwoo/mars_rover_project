@@ -1,7 +1,8 @@
-from mars_rover_v1 import Rover
+from mars_rover import Rover
 
 
 def test_init_method():
+    Rover.set_edge(3, 3)
     rover = Rover(1, 2, "N")
     assert rover.x == 1
     assert rover.y == 2
@@ -9,8 +10,8 @@ def test_init_method():
 
 
 def test_edge_case_north():
+    Rover.set_edge(3, 3)
     rover = Rover(1, 2, "N")
-    rover.set_edge(3, 3)
     rover.move()
     rover.move()
     rover.move()
@@ -18,8 +19,8 @@ def test_edge_case_north():
 
 
 def test_edge_case_east():
+    Rover.set_edge(3, 3)
     rover = Rover(1, 2, "E")
-    rover.set_edge(3, 3)
     rover.move()
     rover.move()
     rover.move()
@@ -27,8 +28,8 @@ def test_edge_case_east():
 
 
 def test_edge_case_west():
+    Rover.set_edge(3, 3)
     rover = Rover(1, 2, "W")
-    rover.set_edge(3, 3)
     rover.move()
     rover.move()
     rover.move()
@@ -36,8 +37,8 @@ def test_edge_case_west():
 
 
 def test_edge_case_south():
+    Rover.set_edge(3, 3)
     rover = Rover(1, 2, "S")
-    rover.set_edge(3, 3)
     rover.move()
     rover.move()
     rover.move()
@@ -45,6 +46,7 @@ def test_edge_case_south():
 
 
 def test_rotate_funtion():
+    Rover.set_edge(3, 3)
     rover = Rover(1, 2, "S")
     rover.rotate("L")
     rover.rotate("L")
@@ -52,8 +54,8 @@ def test_rotate_funtion():
 
 
 def test_action_funtion():
+    Rover.set_edge(3, 3)
     rover = Rover(1, 2, "S")
-    rover.set_edge(3, 3)
     rover.take_action("LMLMLM")
     assert rover.x == 1
     assert rover.y == 3
@@ -61,8 +63,8 @@ def test_action_funtion():
 
 
 def test_action_funtion_two():
+    Rover.set_edge(5, 5)
     rover = Rover(1, 2, "N")
-    rover.set_edge(5, 5)
     rover.take_action("LMLMLMLMM")
     assert rover.x == 1
     assert rover.y == 3
@@ -70,8 +72,8 @@ def test_action_funtion_two():
 
 
 def test_action_funtion_three():
+    Rover.set_edge(5, 5)
     rover = Rover(3, 3, "E")
-    rover.set_edge(5, 5)
     rover.take_action("MMRMMRMRRM")
     assert rover.x == 5
     assert rover.y == 1

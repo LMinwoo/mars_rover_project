@@ -2,12 +2,30 @@ from reading_txt import get_input
 
 
 class Rover:
-    four_ways = ["W", "S", "E", "N"]
+    four_ways = ("W", "S", "E", "N")
     x_edge = 0
     y_edge = 0
     count = 1
 
     def __init__(self, x, y, direction):
+        try:
+            if x > Rover.x_edge or x < 0:
+                raise TypeError
+        except TypeError:
+            print("x not in valid size.")
+
+        try:
+            if y > Rover.y_edge or y < 0:
+                raise TypeError
+        except TypeError:
+            print("y not in valid size.")
+
+        try:
+            if direction not in Rover.four_ways:
+                raise TypeError
+        except TypeError:
+            print("direction should be one of W,S,E,N.")
+
         self.x = x
         self.y = y
         self.direction = direction
@@ -15,9 +33,9 @@ class Rover:
     def __repr__(self):
         return f"Rover{Rover.count}:{self.x} {self.y} {self.direction}"
 
-    def set_edge(self, x, y):
-        self.x_edge = x
-        self.y_edge = y
+    def set_edge(x, y):
+        Rover.x_edge = x
+        Rover.y_edge = y
 
     def move(self):
         if self.direction == "W":
@@ -81,6 +99,7 @@ if __name__ == "__main__":
     print(f"Plateau: {input_txt[0]}")
     plateau_set = input_txt[0]
     plateau_attr = plateau_set.split()
+    Rover.set_edge(int(plateau_attr[0]), int(plateau_attr[1]))
 
     # make variable for printing result
     result = []
@@ -91,7 +110,6 @@ if __name__ == "__main__":
         rover_set = input_txt[2 * x - 1]
         rover_attr = rover_set.split()
         rover = Rover(int(rover_attr[0]), int(rover_attr[1]), rover_attr[2])
-        rover.set_edge(int(plateau_attr[0]), int(plateau_attr[1]))
 
         # print and taking cation for the Rover
         print(f"Rover{Rover.count} Instructions: {input_txt[2 * x]}")
