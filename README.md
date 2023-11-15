@@ -31,3 +31,32 @@ Expected Output:
 ```
 Rover1:1 3 N
 ```
+
+# install requirements
+Insatll requirements using pip:
+```
+$ pip install -r requirements.txt
+```
+# to run the application
+Using python command to run the app:
+```
+$ python mars_rover.py 
+```
+# expected output
+If you run the app, the result should be look like this:
+
+![Alt text](image.png)
+# input.txt
+input.txt should be look like this format.
+
+![Alt text](image-1.png)
+# run the test codes
+
+Using pytest, to run the test code:
+```
+$ pytest test_mars_rover.py  
+```
+
+and the result of the test should look like this:
+
+![Alt text](image-2.png)
