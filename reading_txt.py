@@ -1,5 +1,5 @@
-def get_input():
-    file = open("input.txt", "r")
+def get_input(txt_file):
+    file = open(f"{txt_file}", "r")
     result = []
     while True:
         content = file.readline().strip()
