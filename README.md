@@ -23,7 +23,10 @@ $ source env/bin/activate
 # (Step 3) Install the requirements.txt.
 $ pip install -r requirements.txt
 
-# (Step 4) Run the application. The application name is app.
+# (Step 4) Install application.
+$ pip install --editable .
+
+# (Step 5) Run the application. The application name is app.
 $ app input.txt
 ```
 # Expected output
