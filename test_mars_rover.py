@@ -1,4 +1,5 @@
 from mars_rover import Rover
+import pytest
 
 
 def test_init_method():

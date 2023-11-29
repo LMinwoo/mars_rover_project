@@ -1,56 +1,43 @@
-# mars_rover_project
+# Mars_rover_project
 
-This repository contains command line app that can generate the desired outputs according to the various inputs.
 
-A rover's position is represented by a combination of an x and y co-ordinates and a letter representing one of the four cardinal compass points. The plateau is divided up into a grid to simplify navigation. An example position might be 0, 0, N, which means the rover is in the bottom left corner and facing North.
 
-In order to control a rover, NASA sends a simple string of letters. The possible letters are 'L', 'R' and 'M'. 'L' and 'R' makes the rover spin 90 degrees left or right respectively, without moving from its current spot.
+# Requirements
 
-'M' means move forward one grid point, and maintain the same heading.
+'python3.6+' is required to use  [f-strings](https://www.python.org/dev/peps/pep-0498/)
 
-Assume that the square directly North from (x, y) is (x, y+1).
-
-Input:
-
-Configuration Input: The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are assumed to be 0,0.
-
-Per Rover Input:
-
-Input 1: Landing co-ordinates for the named Rover. The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover's orientation.
-
-Input 2: Navigation instructions for the named rover. i.e a string containing ('L', 'R', 'M').
-
-Test Input:
-```
-Plateau:5 5
-Rover1 Landing:1 2 N
-Rover1 Instructions:LMLMLMLMM
-```
-
-Expected Output:
-```
-Rover1:1 3 N
-```
-
-# install requirements
-Insatll requirements using pip:
+'pip' is required to install following package:
 ```
 $ pip install -r requirements.txt
 ```
-# to run the application
+
+# To run the application
 Using python command to run the app:
 ```
-$ python mars_rover.py 
+# (Step 1) To create the python virtual environment.
+$ python3 -m venv env
+
+# (Step 2) To activate the python virtual environment.
+$ source env/bin/activate
+
+# (Step 3) Install the requirements.txt.
+$ pip install -r requirements.txt
+
+# (Step 4) Install application.
+$ pip install --editable .
+
+# (Step 5) Run the application. The application name is app.
+$ app input.txt
 ```
-# expected output
+# Expected output
 If you run the app, the result should be look like this:
 
-![Alt text](image.png)
-# input.txt
+![Alt text](image-3.png)
+# Input.txt
 input.txt should be look like this format.
 
 ![Alt text](image-1.png)
-# run the test codes
+# Run the test codes
 
 Using pytest, to run the test code:
 ```
